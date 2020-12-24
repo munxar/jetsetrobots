@@ -1,5 +1,4 @@
 # Composer ignores
-/vendor
 composer.phar
 composer.lock
 
@@ -30,4 +29,4 @@ _ide_helper.php
 .DS_Store
 package-lock.json
 /node_modules
-/modules
+
