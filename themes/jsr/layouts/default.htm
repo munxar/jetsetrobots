@@ -8,9 +8,19 @@
             href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap"
             rel="stylesheet"
         />
+        <link rel="stylesheet" href="{{ 'assets/tailwind.css'|theme }}" />
         <link rel="stylesheet" href="{{ 'assets/styles.css'|theme }}" />
     </head>
-    <body>
-        {% page %}
+    <body class="bg-black container mx-auto py-1">
+        <nav class="py-4 flex justify-between">
+            <div>jet.set.robots</div>
+            <div>
+                <a class="hover:bg-gray-700 border-b" href="/">Home</a>
+                <a href="/about">About</a>
+            </div>
+        </nav>
+        <article class="prose">            
+            {% page %}            
+        </article>
     </body>
 </html>

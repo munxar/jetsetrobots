@@ -1,5 +1,4 @@
 body {
-    background-color: black;
     background-image: radial-gradient(
         at 100% 100%,
         rgba(0, 150, 0, 0.75),
@@ -10,7 +9,6 @@ body {
     overflow: hidden;
     padding: 2rem;
     color: white;
-    font: 1.3rem Inconsolata, monospace;
     text-shadow: 0 0 5px #c8c8c8;
 }
 body::after {
@@ -33,8 +31,4 @@ body::after {
 ::selection {
     background: #0080ff;
     text-shadow: none;
-}
-
-pre {
-    margin: 0;
 }

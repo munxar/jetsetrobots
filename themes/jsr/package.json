@@ -1,0 +1,14 @@
+{
+  "name": "jsr",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tailwindcss-cli build src/tailwind.pcss -o assets/tailwind.css"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.3.1",
+    "tailwindcss-cli": "^0.1.2"
+  },
+  "devDependencies": {}
+}
