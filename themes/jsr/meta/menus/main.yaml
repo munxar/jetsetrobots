@@ -1,0 +1,28 @@
+items:
+    -
+        title: About
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: about
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Home
+        nesting: 0
+        type: static-page
+        url: null
+        code: ''
+        reference: index
+        cmsPage: null
+        replace: 0
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: main

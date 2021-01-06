@@ -1,3 +1,9 @@
+[staticPage]
+useContent = 1
+default = 1
+
+[staticMenu]
+code = "main"
 ==
 <html>
     <head>
@@ -12,15 +18,12 @@
         <link rel="stylesheet" href="{{ 'assets/styles.css'|theme }}" />
     </head>
     <body class="bg-black container mx-auto py-1">
-        <nav class="py-4 flex justify-between">
+        <div class="flex">
             <div>jet.set.robots</div>
-            <div>
-                <a class="hover:bg-gray-700 border-b" href="/">Home</a>
-                <a href="/about">About</a>
-            </div>
-        </nav>
+            {% component 'staticMenu' %}
+        </div>        
         <article class="prose">            
-            {% page %}            
+            {% component 'staticPage' %}            
         </article>
     </body>
 </html>
