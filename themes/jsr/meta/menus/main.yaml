@@ -1,11 +1,11 @@
 items:
     -
-        title: About
+        title: Home
         nesting: 0
         type: static-page
         url: null
         code: ''
-        reference: about
+        reference: index
         cmsPage: null
         replace: 0
         viewBag:
@@ -13,12 +13,12 @@ items:
             cssClass: ''
             isExternal: '0'
     -
-        title: Home
+        title: About
         nesting: 0
         type: static-page
         url: null
         code: ''
-        reference: index
+        reference: about
         cmsPage: null
         replace: 0
         viewBag:
