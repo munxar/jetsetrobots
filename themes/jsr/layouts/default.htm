@@ -7,14 +7,16 @@ code = "main"
 ==
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>jetsetrobots</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="{{ 'assets/tailwind.css'|theme }}" />        
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>jetsetrobots - {{ page.title }}</title>
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+          href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap"
+          rel="stylesheet"
+      />
+      <link rel="stylesheet" href="{{ 'assets/tailwind.css'|theme }}" />        
     </head>
     <body>        
         <div>
@@ -73,7 +75,7 @@ code = "main"
                     
                     <div class="-mr-2 flex md:hidden">
                       <!-- Mobile menu button -->
-                      <button class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                      <button onclick="toggle(this)" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                         <span class="sr-only">Open main menu</span>
                         <!--
                           Heroicon name: menu
@@ -102,18 +104,13 @@ code = "main"
         
                 Open: "block", closed: "hidden"
               -->
-              <div class="hidden border-b border-gray-700 md:hidden">
+              <div id="menu" class="hidden border-b border-gray-700 md:hidden">
                 <div class="px-2 py-3 space-y-1 sm:px-3">
-                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                  <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
-        
-                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
-        
-                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-        
-                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
-        
-                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Reports</a>
+                  {% for item in staticMenu.menuItems if not item.viewBag.isHidden %}                            
+                  <a href="{{ item.url }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium {{ item.isActive ? 'bg-gray-900 text-white' : ''}}">
+                    {{ item.title }}
+                  </a>
+                  {% endfor %}                     
                 </div>                
               </div>
             </nav>
@@ -134,5 +131,11 @@ code = "main"
             </div>
           </main>
         </div>
+        <script>
+          function toggle(el) {
+            el.querySelectorAll('svg').forEach(svg => svg.classList.toggle('hidden'))            
+            document.getElementById('menu').classList.toggle('hidden')
+          }
+        </script>
     </body>
 </html>
